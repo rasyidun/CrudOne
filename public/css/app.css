@@ -5731,4 +5731,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+#admin-page {
+  padding-top: 0px; }
+
 /*# sourceMappingURL=app.css.map */

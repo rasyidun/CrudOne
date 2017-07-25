@@ -6,31 +6,31 @@
     @if(Session::has('deleted_user'))
 
       <div class="container">
-        <div class="row"> 
+        <div class="row">
             <div class="panel panel-default">
               <div class="panel-body">
-                          
+
                   <p>{{session('deleted_user')}}</p>
-                                                      
-              </div>         
-            </div>    
+
+              </div>
+            </div>
         </div>
-      </div>  
+      </div>
     @endif
 
     @if(Session::has('updated_user'))
 
       <div class="container">
-        <div class="row"> 
+        <div class="row">
             <div class="panel panel-default">
               <div class="panel-body">
-                          
+
                   <p>{{session('updated_user')}}</p>
-                                                      
-              </div>         
-            </div>    
+
+              </div>
+            </div>
         </div>
-      </div>  
+      </div>
     @endif
 
 
@@ -64,19 +64,19 @@
         $user->photo->file = i want you to print it out,
         : = if not,
         'No Photo' = i want you to display No Photo.
-        -->                         
+        -->
         <td><a href="{{route('users.edit', $user->id)}}"> {{$user->name}}</a></td>
         <td>{{$user->email}}</td>
         <td>{{$user->role->name}}</td>
-         <td>{{$user->is_active == 1 ? 'Active' : 'Not Active'}}</td>
-        <td>{{$user->created_at->diffForHumans()}}</td>
-        <td>{{$user->updated_at->diffForHumans()}}</td>
+        <td>{{$user->is_active == 1 ? 'Active' : 'Not Active'}}</td>
+        <td>{{$user->created_at ? $user->created_at->diffForHumans() : 'No Data'}}</td>
+        <td>{{$user->updated_at ? $user->updated_at->diffForHumans() : 'No Data'}}</td>
       </tr>
-      
+
       		@endforeach
 
       @endif
-    
+
     </tbody>
   </table>
 </div>

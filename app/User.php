@@ -43,7 +43,8 @@ class User extends Authenticatable
 
     public function isAdmin(){
 
-        if($this->role->name == "administrator" && $this->is_active == 1){ //if the role name is equal to "administrator"
+        if($this->role->name == "administrator"){ //if the role name is equal to "administrator"
+        //($this->role->name == "administrator" && $this->is_active == 1)
         // adding "is_active", means that only active users can access the dashboard.
             return true;
         }

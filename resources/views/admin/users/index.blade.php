@@ -5,34 +5,15 @@
 
     @if(Session::has('deleted_user'))
 
-      <div class="container">
-        <div class="row">
-            <div class="panel panel-default">
-              <div class="panel-body">
+        <p class="bg-danger">{{session('deleted_user')}}</p>
 
-                  <p>{{session('deleted_user')}}</p>
-
-              </div>
-            </div>
-        </div>
-      </div>
     @endif
 
     @if(Session::has('updated_user'))
 
-      <div class="container">
-        <div class="row">
-            <div class="panel panel-default">
-              <div class="panel-body">
+        <p class="bg-danger">{{session('updated_user')}}</p>
 
-                  <p>{{session('updated_user')}}</p>
-
-              </div>
-            </div>
-        </div>
-      </div>
     @endif
-
 
 <h1> Users </h1>
 

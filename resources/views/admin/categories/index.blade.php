@@ -35,9 +35,10 @@
 	      <tr>
 	        <td>{{$category->id}}</td>
 	        <td><a href="{{route('categories.edit', $category->id)}}">{{$category->name}}</a></td>
-	    <!--<td>{{$category->created_at->diffForHumans()}}</td> -->
+	    
 	        <td>{{$category->created_at ? $category->created_at->diffForHumans() : 'No Data'}}</td>
-	        	<!-- ? => if,
+					<td>{{$category->updated_at ? $category->updated_at->diffForHumans() : 'No Data'}}</td>
+						<!-- ? => if,
 	        		$category->created_at->diffForHumans() => if $category have a date, then display diffForHumans()
 	        		: => if not,
 	        		'No Data' => if not, then display 'No Data'
@@ -49,7 +50,7 @@
     	@endif
 	</div>
 
-	
+
 
 
 @stop

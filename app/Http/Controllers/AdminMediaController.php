@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Photo;
+use App\User;
 
 class AdminMediaController extends Controller
 {
@@ -42,11 +43,6 @@ class AdminMediaController extends Controller
    		return redirect('/admin/media');
 
    }
-
-
-
-
-
 
 
 

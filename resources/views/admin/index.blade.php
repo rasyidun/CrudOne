@@ -5,6 +5,9 @@
 
 @section('content')
 
-<h1> admin </h1>
+<h1> Admin Page </h1>
+
+
+
 
 @stop

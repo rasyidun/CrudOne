@@ -37,6 +37,9 @@ Route::group(['middleware'=>'admin'], function() {
 
 	Route::resource('admin/media', 'AdminMediaController');
 
+  Route::resource('admin/charts', 'AdminChartsController');
+
+
 	//Route::get ('admin/media/upload', ['as'=>'media.upload', 'uses'=>'AdminMediaController@store']); //to create custom method
 
 	Route::post('/dropzone', 'AdminMediaController@store');

@@ -1,5 +1,24 @@
 @extends('layouts.app')
 
+<!-- Styles -->
+    <style>
+        body {
+            background-image: url("./images/clouds.jpg");
+            }
+        .panel-body {
+                background-image: url("./images/clouds1.jpg")
+        }
+        .navbar {
+                */* background-color: rgba(243,254,198,14); */*
+        }
+
+        .shidun {
+            margin:0px;
+        }
+
+    </style>
+<!-- Styles End -->
+
 @section('content')
 <div class="container">
     <div class="row">

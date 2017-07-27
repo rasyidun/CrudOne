@@ -64,8 +64,6 @@ class AdminUsersController extends Controller
         }
 
 
-
-
        if($file = $request->file('photo_id')) {
 
         $name = time() . $file->getClientOriginalName();
@@ -76,7 +74,7 @@ class AdminUsersController extends Controller
 
         $input['photo_id'] = $photo->id;
         //return "photo exist";
-       }
+      } else {$input = $request->all();}
 
        $input['password'] = bcrypt($request->password); // to encrypt the pwd at database
 
@@ -166,15 +164,11 @@ class AdminUsersController extends Controller
     public function destroy($id)
     {
        $user = User::findOrFail($id);
-
-       if ($user->photo->file) {
-         unlink(public_path() . $user->photo->file);
-         $user->delete();
-         Session::flash('deleted_user', 'The User has been deleted');
-       } else {
-         $user->delete();
+          unlink(public_path() . $user->photo->file);
+          //Storage::delete($user->photo);
+          $user->delete();
           Session::flash('deleted_user', 'The User has been deleted');
-       }
+          //import use Illuminate\Support\Facades\Session;
        return redirect('/admin/users');
     }
 }
